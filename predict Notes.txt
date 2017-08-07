@@ -1,0 +1,103 @@
+
+ PassengerId Survived Pclass
+Name    Sex Age SibSp Parch
+Ticket    Fare Cabin Embarked
+
+
+
+glm(formula = Survived ~ Sex * Pclass + Age, data = data)
+AIC 653.16
+
+
+glm(formula = Survived ~ Sex * Pclass + Sex * Age, data = data)
+AIC 652.11
+
+
+
+
+
+
+
+
+
+Single variable 
+
+sig effects:
+glm(formula = Survived ~ Sex, data = data)
+938.18
+
+glm(formula = Survived ~ Pclass, data = data)
+1141.5
+
+glm(formula = Survived ~ Age, data = data)
+1012.6
+
+glm(formula = Survived ~ Parch, data = data)
+1244
+#Age predicts Parch
+
+glm(formula = Survived ~ Fare, data = data) 
+#sig because far predicts class, and class predicts survival
+1188.9
+
+
+too many levels?
+glm(formula = Survived ~ Cabin, data = data)
+1260.9
+
+glm(formula = Survived ~ Ticket, data = data)
+853.9
+
+
+
+
+non sig effects:
+glm(formula = Survived ~ SibSp, data = data)
+1248.8
+
+glm(formula = Survived ~ Embarked, data = data)
+1223.7
+
+
+
+No interactions:
+glm(formula = Survived ~ Sex + Pclass + Age + Parch + Fare + Cabin + Ticket, data = data)
+332.73
+
+glm(formula = Survived ~ Sex + Pclass + Age + Parch + Fare, data = data)
+668.83
+
+glm(formula = Survived ~ Sex + Pclass + Age + Parch, data = data)
+667.18
+
+glm(formula = Survived ~ Sex + Pclass + Age, data = data)
+667.71
+
+
+
+
+Interactions:
+glm(formula = Survived ~ Sex * Pclass * Age, data = data)
+654.78
+
+glm(formula = Survived ~ Sex * Pclass + Sex * Age, data = data)
+AIC 652.11
+
+
+ex * Pclass + Sex * Age + 
+
+glm(formula = Survived ~ Pclass * Fare, data = data)
+1138.1
+
+glm(formula = Survived ~ Age * Fare, data = data)
+
+glm(formula = Pclass ~ Fare, data = data)
+
+glm(formula = Parch ~ Age, data = data)
+
+
+
+
+
+
+
